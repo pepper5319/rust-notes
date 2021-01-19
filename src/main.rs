@@ -1,7 +1,10 @@
+mod control_flow;
+
 fn main() {
     // functions::example();
     // primatives::example();
     // operators::example();
+    control_flow::example();
 }
 
 mod primatives{
