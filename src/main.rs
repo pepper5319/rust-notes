@@ -1,6 +1,7 @@
 fn main() {
-    //functions::example();
-    primatives::example();
+    // functions::example();
+    // primatives::example();
+    // operators::example();
 }
 
 mod primatives{
@@ -138,5 +139,40 @@ mod functions {
         // Closures created and called together
         let square3 = |i| -> i32 {i * i}(a); // Must include return type
         println!("{:?}", square3);
+    }
+}
+
+mod operators {
+    fn arithmetic(){
+        let a = 5;
+        let e = a / 2; // Integer division
+        let g = 5.0 / 2.0; // 2.5
+    }
+    fn comparisions(){
+        let a = 1;
+        let b = 2;
+
+        let i = true > false; // true
+        let j = 'a' > 'A'; // true
+    }
+    fn bitwise(){
+        let a = 1; // 01
+        let b = 2; // 10
+
+        let c = a & b; // 0 (01 && 10 -> 00)
+        let d = a | b; // 3 (01 || 10 -> 11)
+        let e = a ^ b; // 3 (01 != 10 -> 11)
+        let f = a << b; // 4 (Add b number of 0 to end of a -> '01'+'00' -> 100)
+        let g = a >> b; // 0 (Remove b number of 0 from end of a -> '01'-'00' -> 0)
+    }
+    fn typecast(){
+        let a = 15;
+        let b = (a as f64) / 2.0; // 7.5
+    }
+    pub fn example(){
+        arithmetic();
+        comparisions();
+        bitwise();
+        typecast();
     }
 }
