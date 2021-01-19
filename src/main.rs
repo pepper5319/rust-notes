@@ -42,11 +42,18 @@ mod primatives{
         //   default is 'f64'
         let _f_x = 1.5;
         let _f_y: f64 = 2.0;
+
+        // str
+        //   Unsized UTF-8 sequence of Unicode string slices
+        //   Immutable, statically allocated
+        let a = "Hello, World";
+        let b: &str = "こんにちは";
     }
     fn prim_collections(){
         // Arrays
         //   Immutable by default
         //   Element count CANNOT be changed
+        //   Same data type
         let a = [1, 2, 3];
         let a: [i32; 3] = [1, 2, 3]; // [type; # of elements]
 
@@ -57,10 +64,41 @@ mod primatives{
         c[1] = 4;
         c[2] = 6;
         println!("{:?}", c);
-        println!("{:#?}", c);
+        //println!("{:#?}", c);
 
         let d = [0; 5]; // [0, 0, 0, 0, 0]
         let e = ["x"; 3]; // ["x", "x", "x"]
+
+        // Tuples
+        //   Immutable by default
+        //   Element count cannot be changed
+        //   Same or different data type
+        let a = (1, 2, true, 'a');
+        let a: (i32, f64, bool, char) = (1, 1.2, false, 'b');
+
+        let mut b = (1, 1.5);
+        b.0 = 2;
+        b.1 = 3.0;
+        println!("{:?}", b);
+        //println!("{:#?}", b);
+
+        let (c, d) = b; // c = 2, d = 3.0
+        let (e, _, _, f) = a; // e = 1, f = 'b';
+
+        // Slice
+        //   Dynamically-sized
+        //   Reference to another data structure
+        let a: [i32; 4] = [1, 2, 3, 4]; // Parent array
+        let b: &[i32] = &a; // Slicing whole array
+        let c = &a[0..2]; // From index 0 to index 2 (exclusive)
+        let d = &a[..]; // Whole array
+        println!("c: {:?}", c);
+        println!("d: {:?}", d);
+
+        let e = &a[1..];
+        let f = &a[..3];
+        println!("e: {:?}", e);
+        println!("f: {:?}", f);
     }
     pub fn example(){
         prim_collections();
