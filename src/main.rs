@@ -1,12 +1,14 @@
 mod control_flow;
 mod vectors;
+mod structs;
 
 fn main() {
     // functions::example();
     // primatives::example();
     // operators::example();
     // control_flow::example();
-    vectors::example();
+    // vectors::example();
+    structs::example();
 }
 
 mod primatives{
