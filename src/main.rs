@@ -1,10 +1,12 @@
 mod control_flow;
+mod vectors;
 
 fn main() {
     // functions::example();
     // primatives::example();
     // operators::example();
-    control_flow::example();
+    // control_flow::example();
+    vectors::example();
 }
 
 mod primatives{
