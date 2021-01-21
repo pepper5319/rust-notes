@@ -3,6 +3,7 @@ mod vectors;
 mod structs;
 mod enums;
 mod generics;
+mod impls_traits;
 
 fn main() {
     // functions::example();
@@ -12,7 +13,8 @@ fn main() {
     // vectors::example();
     // structs::example();
     // enums::example();
-    generics::example();
+    // generics::example();
+    impls_traits::example();
 }
 
 mod primatives{
