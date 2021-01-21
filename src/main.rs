@@ -2,6 +2,7 @@ mod control_flow;
 mod vectors;
 mod structs;
 mod enums;
+mod generics;
 
 fn main() {
     // functions::example();
@@ -10,7 +11,8 @@ fn main() {
     // control_flow::example();
     // vectors::example();
     // structs::example();
-    enums::example();
+    // enums::example();
+    generics::example();
 }
 
 mod primatives{
