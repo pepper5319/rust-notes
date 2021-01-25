@@ -5,6 +5,7 @@ mod enums;
 mod generics;
 mod impls_traits;
 mod ownership;
+mod borrowing;
 
 fn main() {
     // functions::example();
@@ -17,6 +18,7 @@ fn main() {
     // generics::example();
     // impls_traits::example();
     // ownership::example();
+    borrowing::example();
 }
 
 mod primatives{
