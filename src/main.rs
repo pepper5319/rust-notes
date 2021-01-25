@@ -4,6 +4,7 @@ mod structs;
 mod enums;
 mod generics;
 mod impls_traits;
+mod ownership;
 
 fn main() {
     // functions::example();
@@ -14,7 +15,8 @@ fn main() {
     // structs::example();
     // enums::example();
     // generics::example();
-    impls_traits::example();
+    // impls_traits::example();
+    // ownership::example();
 }
 
 mod primatives{
