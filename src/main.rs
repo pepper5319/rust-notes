@@ -6,6 +6,7 @@ mod generics;
 mod impls_traits;
 mod ownership;
 mod borrowing;
+mod lifetimes;
 
 fn main() {
     // functions::example();
@@ -18,7 +19,8 @@ fn main() {
     // generics::example();
     // impls_traits::example();
     // ownership::example();
-    borrowing::example();
+    // borrowing::example();
+    lifetimes::example();
 }
 
 mod primatives{
