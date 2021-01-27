@@ -1,6 +1,26 @@
 pub fn example() {
+    let player = Person::new("Woot", "Poot");
+    let player_fullname = player.fullname();
 
+    println!("Player: {}", player_fullname);
 }
+
+struct Person<'a> {
+    fname: &'a str,
+    lname: &'a str
+}
+
+    impl<'a> Person<'a> {
+        fn new(fname: &'a str, lname: &'a str) -> Person<'a> {
+            Person {
+                fname: fname,
+                lname: lname
+            }
+        }
+        fn fullname(&self) -> String {
+            format!("{} {}", self.fname, self.lname)
+        }
+    }
 
 /*
     Lifetimes
@@ -78,4 +98,58 @@ pub fn example() {
                 self.x
             }
         }
+ }
+
+ mod elision {
+     /*
+        Lifetime Elision only in fn definitions
+        Can be elided if either:
+            only one input parameter passed by reference
+            a parameter with either '&self' or '&mut self' reference
+     */
+     // only on input parameter passed by reference
+     fn triple(x: &u64) -> u64{
+         x * 3
+     }
+
+     // One input passed by reference
+     fn filter(x: u8, y: &str) -> &str {
+         if x > 5 { y } else { "invalid" }
+     }
+
+     struct Player<'a> {
+         id: u8,
+         name: &'a str
+     }
+
+     impl<'a> Player<'a> {
+         // one input passed by reference
+         fn new(id: u8, name: &str) -> Player{
+             Player{
+                id: id,
+                name: name
+             }
+         }
+         // &self is parameter
+         fn heading_text(&self) -> String{
+             format!("{}: {}", self.id, self.name)
+         }
+     }
+
+ }
+
+ mod static_annotation {
+     /*
+        'static is reserved
+        valid for entire program
+        will NEVER go out of scope
+     */
+     static N: i32 = 5; // constance w/ static lifetime
+
+     // let a = "Hello, World"; // a: &'static str
+
+     fn index() -> &'static str {
+         "Hello, World"
+     }
+
  }
